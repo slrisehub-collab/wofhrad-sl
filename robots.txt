@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://slrisehub-collab.github.io/wofhrad-sl./sitemap.xml
