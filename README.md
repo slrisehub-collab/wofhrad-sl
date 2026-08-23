@@ -2,7 +2,7 @@
 
 **Women's Forum for Human Rights and Democracy — Sierra Leone**
 
-Live: https://slrisehub-collab.github.io/wofhrad-sl./
+Live: https://slrisehub-collab.github.io/wofhrad-sl/
 
 A static, multi-page site (HTML, CSS, JS). No build step. Images are stored in `/images`.
 
