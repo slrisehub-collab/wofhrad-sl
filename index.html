@@ -3,255 +3,730 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WOFHRAD-SL | Women&#x27;s Forum for Human Rights & Democracy — Sierra Leone</title>
+  <title>WOFHRAD-SL | Women's Forum for Human Rights & Democracy — Sierra Leone</title>
   <meta name="description" content="WOFHRAD-SL promotes and protects human rights, justice and good governance in Sierra Leone, with women at the forefront of change since 2006." />
   <meta name="author" content="WOFHRAD-SL" />
-  <link rel="canonical" href="https://slrisehub-collab.github.io/wofhrad-sl/index.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="WOFHRAD-SL | Women&#x27;s Forum for Human Rights & Democracy — Sierra Leone" />
-  <meta property="og:description" content="WOFHRAD-SL promotes and protects human rights, justice and good governance in Sierra Leone, with women at the forefront of change since 2006." />
-  <meta property="og:url" content="https://slrisehub-collab.github.io/wofhrad-sl/index.html" />
-  <meta property="og:image" content="https://slrisehub-collab.github.io/wofhrad-sl/images/hero.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="WOFHRAD-SL | Women&#x27;s Forum for Human Rights & Democracy — Sierra Leone" />
-  <meta name="twitter:description" content="WOFHRAD-SL promotes and protects human rights, justice and good governance in Sierra Leone, with women at the forefront of change since 2006." />
   <link rel="icon" href="favicon.jpg" type="image/jpeg" />
-  <link rel="apple-touch-icon" href="images/logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"NGO","name":"WOFHRAD-SL","legalName":"Women's Forum for Human Rights and Democracy — Sierra Leone","url":"https://slrisehub-collab.github.io/wofhrad-sl/","logo":"https://slrisehub-collab.github.io/wofhrad-sl/images/logo.jpg","email":"wofhrad95@gmail.com","telephone":"+232 76 335 749","foundingDate":"2006","address":{"@type":"PostalAddress","streetAddress":"17 Frontier Road","addressLocality":"Makeni","addressCountry":"SL"},"sameAs":["https://www.facebook.com/profile.php?id=100081906676434","https://www.instagram.com/wofhradsl/","https://twitter.com/wofhrad_sl"]}
-  </script>
+  <style>
+    :root {
+      --navy: #0a2540;
+      --gold: #c9a227;
+      --cream: #f8f6f1;
+      --text: #1a1a1a;
+      --muted: #555;
+      --white: #fff;
+      --radius: 10px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--text); line-height: 1.6; background: #fff; }
+    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.25; }
+    a { color: var(--navy); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; display: block; }
+    .wrap { width: min(1120px, 92%); margin-inline: auto; }
+    .skip { position: absolute; left: -9999px; }
+    .skip:focus { left: 1rem; top: 1rem; background: var(--gold); padding: .5rem 1rem; z-index: 100; }
+
+    /* Nav */
+    #navbar { position: sticky; top: 0; z-index: 50; background: var(--white); border-bottom: 1px solid #e8e4dc; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: .7rem 0; gap: 1rem; }
+    .brand { display: flex; align-items: center; gap: .75rem; color: inherit; text-decoration: none; }
+    .brand img { border-radius: 50%; width: 46px; height: 46px; object-fit: cover; }
+    .brand strong { display: block; font-size: 1.05rem; }
+    .brand span { font-size: .72rem; color: var(--muted); display: block; max-width: 180px; line-height: 1.2; }
+    .nav-links { display: flex; align-items: center; flex-wrap: wrap; gap: .55rem 1rem; font-size: .9rem; }
+    .nav-links a { color: var(--navy); font-weight: 500; }
+    .nav-links a.active, .nav-links a:hover { color: var(--gold); }
+    .lang-toggle { display: inline-flex; border: 1px solid #ddd; border-radius: 6px; overflow: hidden; }
+    .lang-toggle button { border: 0; background: transparent; padding: .3rem .55rem; cursor: pointer; font-size: .8rem; }
+    .lang-toggle button.on { background: var(--navy); color: #fff; }
+    #hamburger { display: none; background: none; border: 0; cursor: pointer; width: 40px; height: 40px; flex-direction: column; justify-content: center; gap: 5px; }
+    #hamburger span { display: block; height: 2px; background: var(--navy); width: 22px; margin: 0 auto; }
+    #mobile-menu { display: none; flex-direction: column; gap: .8rem; padding: 1rem 0 1.5rem; border-top: 1px solid #eee; }
+    #mobile-menu.open { display: flex; }
+    #mobile-menu a { font-weight: 500; }
+
+    /* Buttons */
+    .btn { display: inline-block; padding: .65rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: .9rem; border: 2px solid transparent; cursor: pointer; text-decoration: none; transition: .15s; }
+    .btn-primary { background: var(--navy); color: #fff; }
+    .btn-primary:hover { background: #06182b; text-decoration: none; }
+    .btn-gold { background: var(--gold); color: #111; }
+    .btn-gold:hover { filter: brightness(.95); text-decoration: none; }
+    .btn-outline { border-color: #fff; color: #fff; background: transparent; }
+    .btn-outline:hover { background: rgba(255,255,255,.12); text-decoration: none; }
+    .btn-outline-blue { border-color: var(--navy); color: var(--navy); background: transparent; }
+    .btn-outline-blue:hover { background: var(--navy); color: #fff; text-decoration: none; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.4rem; }
+
+    /* Sections */
+    .section { padding: 3.5rem 0; }
+    .section.alt { background: var(--cream); }
+    .section.navy { background: var(--navy); color: #fff; }
+    .label { display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-bottom: .5rem; }
+    .label.gold { color: var(--gold); }
+    .section h1, .section h2 { margin-bottom: .8rem; }
+    .section h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+    .section h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+    /* Hero */
+    .hero { padding: 3rem 0 2rem; background: linear-gradient(180deg, #faf8f4 0%, #fff 100%); }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2.5rem; align-items: center; }
+    .badge { display: inline-block; background: #eef3f8; color: var(--navy); font-size: .78rem; font-weight: 600; padding: .3rem .7rem; border-radius: 99px; margin-bottom: .8rem; }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero-photo { position: relative; }
+    .hero-photo img { border-radius: var(--radius); width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .float-stat { position: absolute; background: #fff; box-shadow: 0 8px 24px rgba(0,0,0,.12); border-radius: 10px; padding: .7rem 1rem; }
+    .float-stat b { font-size: 1.4rem; display: block; color: var(--navy); }
+    .float-stat small { font-size: .75rem; color: var(--muted); }
+    .float-left { bottom: 1.2rem; left: -1rem; }
+    .float-right { top: 1.2rem; right: -1rem; }
+
+    /* Stats bar */
+    .stats { background: var(--navy); color: #fff; padding: 1.6rem 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center; }
+    .stats-grid b { display: block; font-size: 1.6rem; font-family: 'Playfair Display', serif; }
+    .stats-grid span { font-size: .85rem; opacity: .85; }
+
+    /* Grid helpers */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+    .photo-stack { position: relative; }
+    .photo-stack .main { border-radius: var(--radius); width: 100%; }
+    .photo-stack .accent { position: absolute; width: 45%; bottom: -1rem; right: -1rem; border-radius: 8px; border: 4px solid #fff; box-shadow: 0 6px 20px rgba(0,0,0,.15); }
+    .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+    .chip { background: #e8eef5; color: var(--navy); font-size: .8rem; font-weight: 600; padding: .35rem .7rem; border-radius: 99px; }
+
+    /* Cards */
+    .cards { display: grid; gap: 1.4rem; }
+    .cards.three { grid-template-columns: repeat(3, 1fr); }
+    .cards.two { grid-template-columns: repeat(2, 1fr); }
+    .card { background: #fff; border-radius: var(--radius); overflow: hidden; border: 1px solid #ebe7df; transition: .2s; display: flex; flex-direction: column; color: inherit; text-decoration: none; }
+    a.card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,.08); text-decoration: none; }
+    .card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+    .card .body { padding: 1.1rem 1.2rem 1.3rem; flex: 1; display: flex; flex-direction: column; }
+    .card .tag { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--gold); margin-bottom: .35rem; }
+    .card h3 { font-size: 1.1rem; margin-bottom: .4rem; }
+    .card p { font-size: .9rem; color: var(--muted); flex: 1; }
+    .card .more { margin-top: .7rem; font-weight: 600; font-size: .88rem; color: var(--navy); }
+    .card .meta { font-size: .8rem; color: var(--muted); margin-bottom: .3rem; }
+    .card.cta { background: var(--navy); color: #fff; border: none; }
+    .card.cta p { color: rgba(255,255,255,.8); }
+    .card.cta .tag { color: var(--gold); }
+    .card.cta .more { color: var(--gold); }
+
+    /* Impact */
+    .impact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 2.5rem; align-items: start; }
+    .quote { background: rgba(255,255,255,.08); border-left: 3px solid var(--gold); padding: 1rem 1.2rem; margin: 1.2rem 0; font-style: italic; }
+    .stat-boxes { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+    .stat-box { background: rgba(255,255,255,.07); border-radius: 8px; padding: 1rem; text-align: center; }
+    .stat-box b { display: block; font-size: 1.5rem; font-family: 'Playfair Display', serif; color: var(--gold); }
+    .stat-box span { font-size: .8rem; opacity: .85; }
+
+    /* Partners */
+    .partners { display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: center; align-items: center; }
+    .partner { background: #fff; border: 1px solid #ebe7df; border-radius: 8px; padding: .8rem 1.1rem; min-width: 120px; text-align: center; font-size: .85rem; font-weight: 600; }
+    .partner img { max-height: 40px; margin: 0 auto .4rem; object-fit: contain; }
+
+    /* Involve */
+    .involve { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .involve-card { background: rgba(255,255,255,.07); border-radius: var(--radius); padding: 1.4rem; }
+    .involve-card h3 { margin-bottom: .5rem; }
+    .involve-card p { font-size: .9rem; opacity: .85; margin-bottom: 1rem; }
+
+    /* Forms */
+    form label { font-size: .88rem; font-weight: 600; display: block; margin-bottom: .25rem; }
+    form input, form select, form textarea { width: 100%; padding: .7rem .85rem; border: 1px solid #ccc; border-radius: 6px; font: inherit; }
+    form input:focus, form select:focus, form textarea:focus { outline: 2px solid var(--gold); border-color: var(--gold); }
+    .form-grid { display: grid; gap: 1rem; }
+
+    /* Donate boxes */
+    .pay-box { background: var(--cream); padding: 1.4rem; border-radius: var(--radius); margin: 1.2rem 0; }
+    .pay-box h3 { margin-top: 0; margin-bottom: .6rem; }
+
+    /* Footer */
+    footer { background: #06182b; color: rgba(255,255,255,.8); padding: 3rem 0 0; font-size: .9rem; }
+    footer a { color: rgba(255,255,255,.85); display: block; margin: .25rem 0; }
+    footer a:hover { color: var(--gold); }
+    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 2rem; padding-bottom: 2rem; }
+    .footer-grid h3 { color: #fff; font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; margin-bottom: .7rem; font-family: 'DM Sans', sans-serif; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding: 1.1rem 0; font-size: .8rem; }
+
+    /* Utility */
+    #back-top { position: fixed; bottom: 5.5rem; right: 1.2rem; width: 42px; height: 42px; border-radius: 50%; border: 0; background: var(--navy); color: #fff; font-size: 1.1rem; cursor: pointer; opacity: 0; pointer-events: none; transition: .2s; z-index: 40; }
+    #back-top.show { opacity: 1; pointer-events: auto; }
+    #wa { position: fixed; bottom: 1.2rem; right: 1.2rem; width: 52px; height: 52px; border-radius: 50%; background: #25d366; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .9rem; z-index: 40; box-shadow: 0 4px 14px rgba(0,0,0,.2); text-decoration: none; }
+    #wa:hover { filter: brightness(1.05); text-decoration: none; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid, .grid-2, .impact-grid { grid-template-columns: 1fr; }
+      .cards.three, .cards.two, .stat-boxes, .involve, .stats-grid, .footer-grid { grid-template-columns: 1fr 1fr; }
+      .photo-stack .accent { position: static; width: 70%; margin-top: -2rem; margin-left: auto; }
+      .float-left, .float-right { position: static; display: inline-block; margin: .5rem .5rem 0 0; }
+      .nav-links { display: none; }
+      #hamburger { display: flex; }
+    }
+    @media (max-width: 560px) {
+      .cards.three, .cards.two, .stat-boxes, .involve, .stats-grid, .footer-grid { grid-template-columns: 1fr; }
+      .brand span { display: none; }
+    }
+  </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
 <nav id="navbar" aria-label="Main">
   <div class="wrap nav-inner">
-    <a class="brand" href="index.html" aria-label="WOFHRAD-SL home">
-      <img src="images/logo.jpg" alt="WOFHRAD-SL logo" width="46" height="46" />
+    <a class="brand" href="#home" aria-label="WOFHRAD-SL home">
+      <img src="images/logo.jpg" alt="WOFHRAD-SL logo" width="46" height="46" onerror="this.style.display='none'" />
       <div>
         <strong>WOFHRAD-SL</strong>
         <span>Women's Forum for Human Rights & Democracy</span>
       </div>
     </a>
     <div class="nav-links">
-      <a href="index.html" data-i18n="nav_home" class="active">Home</a><a href="about.html" data-i18n="nav_about">About</a><a href="programs.html" data-i18n="nav_programs">Programs</a><a href="news.html" data-i18n="nav_news">News</a><a href="team.html" data-i18n="nav_team">Team</a><a href="partners.html" data-i18n="nav_partners">Partners</a><a href="get-involved.html" data-i18n="nav_involved">Get Involved</a><a href="contact.html" data-i18n="nav_contact">Contact</a>
-      <a class="btn btn-gold" href="donate.html" data-i18n="nav_donate">Donate</a>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#news">News</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reports">Reports</a>
+      <a href="#events">Events</a>
+      <a href="#partners">Partners</a>
+      <a href="#involved">Get Involved</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#donate">Donate</a>
       <div class="lang-toggle" role="group" aria-label="Language">
         <button type="button" data-lang="en" class="on">EN</button>
         <button type="button" data-lang="kri">Krio</button>
       </div>
     </div>
-    <button id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    <button id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <div id="mobile-menu">
-    <a href="index.html" data-i18n="nav_home">Home</a><a href="about.html" data-i18n="nav_about">About</a><a href="programs.html" data-i18n="nav_programs">Programs</a><a href="news.html" data-i18n="nav_news">News</a><a href="team.html" data-i18n="nav_team">Team</a><a href="partners.html" data-i18n="nav_partners">Partners</a><a href="get-involved.html" data-i18n="nav_involved">Get Involved</a><a href="contact.html" data-i18n="nav_contact">Contact</a>
-    <a class="btn btn-gold" href="donate.html" data-i18n="nav_donate">Donate</a>
+  <div id="mobile-menu" class="wrap">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#programs">Programs</a>
+    <a href="#news">News</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reports">Reports</a>
+    <a href="#events">Events</a>
+    <a href="#partners">Partners</a>
+    <a href="#involved">Get Involved</a>
+    <a href="#contact">Contact</a>
+    <a class="btn btn-gold" href="#donate">Donate</a>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="en" class="on">EN</button>
+      <button type="button" data-lang="kri">Krio</button>
+    </div>
   </div>
 </nav>
 
 <main id="main">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="badge" data-i18n="hero_badge">Est. 2006 · Sierra Leone</span>
-      <h1 data-i18n="hero_title">Championing <em>Women's Rights</em> & Democracy in Sierra Leone</h1>
-      <p data-i18n="hero_lead">WOFHRAD-SL promotes and protects human rights, justice, and good governance — with women at the forefront of change, from communities to parliament.</p>
+
+  <!-- ========== HOME / HERO ========== -->
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="badge">Est. 2006 · Sierra Leone</span>
+        <h1>Championing <em>Women's Rights</em> & Democracy in Sierra Leone</h1>
+        <p>WOFHRAD-SL promotes and protects human rights, justice, and good governance — with women at the forefront of change, from communities to parliament.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#programs">Explore our work</a>
+          <a class="btn btn-outline-blue" href="#contact">Partner with us</a>
+          <a class="btn btn-gold" href="#donate">Donate</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="images/hero.jpg" alt="WOFHRAD-SL women leaders and community members in Bombali District" width="1200" height="900" onerror="this.src='https://placehold.co/800x600/0a2540/c9a227?text=WOFHRAD-SL'" />
+        <div class="float-stat float-left"><div><b>90</b><small>Safe spaces for girls</small></div></div>
+        <div class="float-stat float-right"><div><b>41</b><small>Women elected, 2023</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" aria-label="Key results">
+    <div class="wrap stats-grid">
+      <div><b>2006</b><span>Year founded</span></div>
+      <div><b>2,250+</b><span>Girls in safe spaces</span></div>
+      <div><b>6</b><span>Districts reached</span></div>
+      <div><b>20 yrs</b><span>Of service</span></div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section alt" id="about">
+    <div class="wrap grid-2">
+      <div class="photo-stack">
+        <img class="main" src="images/about-main.jpg" alt="WOFHRAD-SL team with community members" onerror="this.src='https://placehold.co/600x400/0a2540/fff?text=Team'" />
+        <img class="accent" src="images/about-accent.jpg" alt="Women's network meeting in Bombali" onerror="this.src='https://placehold.co/300x200/c9a227/111?text=Network'" />
+      </div>
+      <div>
+        <span class="label">Who we are</span>
+        <h2>Promoting justice and inclusive governance</h2>
+        <p>WOFHRAD-SL is a non-governmental organisation founded in 2006 by a group of young women in Makeni — students of the University of Makeni inspired to be job creators, not job seekers. After the war ended in 2002, women in rural Sierra Leone still faced abuse and blocked access to justice in a male-dominated society.</p>
+        <p>We strive to ensure the promotion and protection of human rights and justice, democracy, and good governance — with women leading change in communities, districts and the nation.</p>
+        <div class="chips">
+          <div class="chip">Inclusivity & diversity</div>
+          <div class="chip">Consultation</div>
+          <div class="chip">Accountability</div>
+          <div class="chip">Integrity</div>
+          <div class="chip">Proactivity</div>
+          <div class="chip">Transparency</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROGRAMS ========== -->
+  <section class="section" id="programs">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:2rem;">
+        <span class="label">Programs</span>
+        <h2>Initiatives for change</h2>
+      </div>
+      <div class="cards three">
+        <article class="card">
+          <img src="images/programs/icsp.jpg" alt="ICSP women's empowerment session" onerror="this.src='https://placehold.co/400x250/eee/333?text=ICSP'" />
+          <div class="body">
+            <span class="tag">Bombali District</span>
+            <h3>ICSP Women's Empowerment</h3>
+            <p>Irish Civil Society Programme work with women's networks on leadership, advocacy and holding duty-bearers to account.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="images/programs/gcc.jpg" alt="Girls Circle Collective safe space" onerror="this.src='https://placehold.co/400x250/eee/333?text=Girls+Circle'" />
+          <div class="body">
+            <span class="tag">Girls aged 9–18</span>
+            <h3>Girls Circle Collective</h3>
+            <p>90 safe spaces across 8 chiefdoms in Bombali for out-of-school girls — life skills, literacy, livelihoods and protection.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="images/programs/p2p.jpg" alt="People to People peacebuilding" onerror="this.src='https://placehold.co/400x250/eee/333?text=Peacebuilding'" />
+          <div class="body">
+            <span class="tag">Peacebuilding</span>
+            <h3>People to People Project</h3>
+            <p>Preventing politically motivated violence by training women and youth as peacebuilders using Trócaire's methodology.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="images/programs/gender.jpg" alt="Gender equality and social accountability" onerror="this.src='https://placehold.co/400x250/eee/333?text=Gender+Equality'" />
+          <div class="body">
+            <span class="tag">EU & Trócaire</span>
+            <h3>Gender Equality & Social Accountability</h3>
+            <p>Strengthening civil society so women can influence democratic governance and service delivery.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="images/programs/peace.jpg" alt="Conflict mitigation work" onerror="this.src='https://placehold.co/400x250/eee/333?text=Conflict+Mitigation'" />
+          <div class="body">
+            <span class="tag">Six districts</span>
+            <h3>Conflict Mitigation & Peace Building</h3>
+            <p>Peace ambassadors and dialogue across Bombali, Karene, Freetown, Waterloo, Kono and Pujehun.</p>
+          </div>
+        </article>
+        <article class="card cta">
+          <div class="body">
+            <span class="tag">Opportunity</span>
+            <h3>Internship programme</h3>
+            <p>No posts are open right now. Register your interest and we will contact you when a placement is advertised.</p>
+            <a class="more" href="#contact">Register interest →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== IMPACT ========== -->
+  <section class="section navy">
+    <div class="wrap impact-grid">
+      <div>
+        <span class="label gold">Impact</span>
+        <h2>Changing lives, changing policies</h2>
+        <p style="color:rgba(255,255,255,.8);">Two decades of advocacy — from rural safe spaces to the halls of parliament.</p>
+        <div class="quote">“After the 2018 elections, only 18 parliament members were female nationwide. In 2023, 41 female mandates were directly elected to parliament.”</div>
+        <p style="color:var(--gold);font-size:.85rem;margin-top:.8rem;">The Gender Equality and Women's Empowerment Act (GEWE Act, 2022) now mandates 30% female representation.</p>
+      </div>
+      <div class="stat-boxes">
+        <div class="stat-box"><b>41</b><span>Women in parliament (2023)</span></div>
+        <div class="stat-box"><b>30%</b><span>GEWE Act mandate</span></div>
+        <div class="stat-box"><b>90</b><span>Girls' safe spaces</span></div>
+        <div class="stat-box"><b>2,250+</b><span>Girls enrolled</span></div>
+        <div class="stat-box"><b>5,600</b><span>Reached with peace messages</span></div>
+        <div class="stat-box"><b>9</b><span>Young women governance networks</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== NEWS ========== -->
+  <section class="section alt" id="news">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:2rem;">
+        <span class="label">News</span>
+        <h2>Watch, read, listen</h2>
+      </div>
+      <div class="cards three">
+        <article class="card">
+          <img src="images/news/training-2023.jpg" alt="Women candidates leadership training" onerror="this.src='https://placehold.co/400x250/eee/333?text=Training+2023'" />
+          <div class="body">
+            <div class="meta">1 Jun 2023</div>
+            <h3>Nationwide leadership training for women candidates</h3>
+            <p>With UN Women, World Vision and the Government of Sierra Leone.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="images/news/iwd.jpg" alt="International Women's Day in Makeni" onerror="this.src='https://placehold.co/400x250/eee/333?text=IWD'" />
+          <div class="body">
+            <div class="meta">13 Mar 2020</div>
+            <h3>International Women's Day in Makeni</h3>
+            <p>Celebrating with the Ministry of Social Welfare, Gender and Children's Affairs.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="images/news/ebola-food.jpg" alt="Food distribution during Ebola" onerror="this.src='https://placehold.co/400x250/eee/333?text=Ebola+Response'" />
+          <div class="body">
+            <div class="meta">5 Feb 2015</div>
+            <h3>Food supply to 800 sponsored children</h3>
+            <p>Ebola response with ActionAid in Bombali District.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section class="section" id="gallery">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:2rem;">
+        <span class="label">Media</span>
+        <h2>Gallery</h2>
+        <p style="max-width:40rem;margin:0 auto;">Moments from programmes, trainings, safe spaces and community events across Bombali and beyond.</p>
+      </div>
+      <div class="cards three">
+        <div class="card">
+          <img src="images/programs/gcc.jpg" alt="Girls Circle" onerror="this.src='https://placehold.co/400x250/eee/333?text=Girls+Circle'" />
+          <div class="body"><span class="tag">Girls Circle</span><h3>Safe space session – Bombali</h3></div>
+        </div>
+        <div class="card">
+          <img src="images/programs/icsp.jpg" alt="ICSP" onerror="this.src='https://placehold.co/400x250/eee/333?text=ICSP'" />
+          <div class="body"><span class="tag">ICSP</span><h3>Women’s network meeting</h3></div>
+        </div>
+        <div class="card">
+          <img src="images/news/training-2023.jpg" alt="Training 2023" onerror="this.src='https://placehold.co/400x250/eee/333?text=Training'" />
+          <div class="body"><span class="tag">2023 Elections</span><h3>Leadership training for candidates</h3></div>
+        </div>
+        <div class="card">
+          <img src="images/news/iwd.jpg" alt="IWD" onerror="this.src='https://placehold.co/400x250/eee/333?text=IWD'" />
+          <div class="body"><span class="tag">IWD 2020</span><h3>International Women’s Day – Makeni</h3></div>
+        </div>
+        <div class="card">
+          <img src="images/programs/p2p.jpg" alt="P2P" onerror="this.src='https://placehold.co/400x250/eee/333?text=Peace'" />
+          <div class="body"><span class="tag">Peacebuilding</span><h3>People to People dialogue</h3></div>
+        </div>
+        <div class="card">
+          <img src="images/about-main.jpg" alt="Community" onerror="this.src='https://placehold.co/400x250/eee/333?text=Community'" />
+          <div class="body"><span class="tag">Community</span><h3>Team with community members</h3></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REPORTS ========== -->
+  <section class="section alt" id="reports">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:2rem;">
+        <span class="label">Resources</span>
+        <h2>Reports & Publications</h2>
+      </div>
+      <div class="cards two">
+        <div class="card" style="padding:1.5rem;">
+          <span class="tag">Annual Report</span>
+          <h3 style="margin-top:.5rem;">WOFHRAD-SL Annual Report 2024</h3>
+          <p>Overview of programmes, reach and financial summary.</p>
+          <p style="margin-top:1rem;"><a class="btn btn-outline-blue" href="#">Download PDF</a></p>
+          <p style="font-size:.8rem;color:#666;margin-top:.4rem;">Replace link with actual file when ready.</p>
+        </div>
+        <div class="card" style="padding:1.5rem;">
+          <span class="tag">Programme Brief</span>
+          <h3 style="margin-top:.5rem;">Girls Circle Collective – Impact Summary</h3>
+          <p>Key results from 90 safe spaces across 8 chiefdoms.</p>
+          <p style="margin-top:1rem;"><a class="btn btn-outline-blue" href="#">Download PDF</a></p>
+        </div>
+        <div class="card" style="padding:1.5rem;">
+          <span class="tag">Policy</span>
+          <h3 style="margin-top:.5rem;">GEWE Act – Briefing Note</h3>
+          <p>Summary of the 30% representation mandate.</p>
+          <p style="margin-top:1rem;"><a class="btn btn-outline-blue" href="#">Download PDF</a></p>
+        </div>
+        <div class="card" style="padding:1.5rem;">
+          <span class="tag">Training</span>
+          <h3 style="margin-top:.5rem;">Women Candidates Leadership Toolkit (2023)</h3>
+          <p>Materials used in the nationwide training.</p>
+          <p style="margin-top:1rem;"><a class="btn btn-outline-blue" href="#">Download PDF</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EVENTS ========== -->
+  <section class="section" id="events">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:2rem;">
+        <span class="label">Calendar</span>
+        <h2>Events</h2>
+      </div>
+      <h3 style="margin-bottom:1rem;">Upcoming</h3>
+      <div class="card" style="padding:1.4rem;margin-bottom:2rem;">
+        <div class="meta">Date to be announced</div>
+        <h3>20th Anniversary Celebration</h3>
+        <p>Marking two decades of WOFHRAD-SL’s work for women’s rights and democracy. Details will be published here and on our social channels.</p>
+      </div>
+      <h3 style="margin-bottom:1rem;">Past highlights</h3>
+      <div class="cards three">
+        <div class="card"><div class="body"><div class="meta">1–16 Jun 2023</div><h3>Nationwide leadership training</h3><p>Six districts – World Vision, UN Women & partners.</p></div></div>
+        <div class="card"><div class="body"><div class="meta">13 Mar 2020</div><h3>International Women’s Day – Makeni</h3><p>With the Ministry of Social Welfare, Gender and Children’s Affairs.</p></div></div>
+        <div class="card"><div class="body"><div class="meta">2015</div><h3>Ebola response food distribution</h3><p>Support to 800 children in Bombali with ActionAid.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PARTNERS ========== -->
+  <section class="section alt" id="partners">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:1.5rem;">
+        <span class="label">Partners</span>
+        <h2>Who we work with</h2>
+      </div>
+      <div class="partners">
+        <div class="partner">Irish Aid</div>
+        <div class="partner">Trócaire</div>
+        <div class="partner">UN Women</div>
+        <div class="partner">World Vision</div>
+        <div class="partner">European Union</div>
+        <div class="partner">ActionAid</div>
+        <div class="partner">Purposeful</div>
+        <div class="partner">VSO</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DONATE ========== -->
+  <section class="section navy" id="donate">
+    <div class="wrap" style="max-width:720px;">
+      <span class="label gold">Support our work</span>
+      <h2>Donate to WOFHRAD-SL</h2>
+      <p style="opacity:.9;">Your contribution funds safe spaces for girls, leadership training for women, and peacebuilding across six districts.</p>
+
+      <div class="stat-boxes" style="margin:1.8rem 0;">
+        <div class="stat-box"><b>90</b><span>Safe spaces</span></div>
+        <div class="stat-box"><b>2,250+</b><span>Girls reached</span></div>
+        <div class="stat-box"><b>41</b><span>Women elected 2023</span></div>
+      </div>
+
+      <div class="pay-box" style="background:rgba(255,255,255,.08);color:#fff;">
+        <h3>Mobile Money (preferred)</h3>
+        <p><strong>Orange Money</strong><br>Number: <strong>+232 XX XXX XXX</strong><br>Name: WOFHRAD-SL</p>
+        <p style="margin-top:.8rem;"><strong>Africell Money</strong><br>Number: <strong>+232 XX XXX XXX</strong><br>Reference: Donation – [Your Name]</p>
+        <p style="font-size:.85rem;opacity:.75;margin-top:.8rem;">Replace with official organisational numbers before publishing.</p>
+      </div>
+
+      <div class="pay-box" style="background:rgba(255,255,255,.08);color:#fff;">
+        <h3>Bank Transfer</h3>
+        <p>Bank: [Bank Name]<br>Account Name: Women’s Forum for Human Rights and Democracy – Sierra Leone<br>Account Number: [XXXXXXXX]<br>Branch: Makeni</p>
+      </div>
+
+      <div class="pay-box" style="background:rgba(255,255,255,.08);color:#fff;">
+        <h3>International / Partners</h3>
+        <p>Request an invoice or secure payment link by emailing <a href="mailto:wofhrad95@gmail.com" style="color:var(--gold);">wofhrad95@gmail.com</a>.</p>
+      </div>
+
+      <p style="margin-top:1.5rem;">After giving, please confirm via WhatsApp or email so we can acknowledge your gift.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="programs.html" data-i18n="cta_work">Explore our work</a>
-        <a class="btn btn-outline" href="contact.html" data-i18n="cta_partner">Partner with us</a>
-        <a class="btn btn-gold" href="donate.html" data-i18n="cta_donate">Donate</a>
+        <a class="btn btn-gold" href="https://wa.me/23276335749" target="_blank" rel="noopener">Confirm on WhatsApp</a>
+        <a class="btn btn-outline" href="mailto:wofhrad95@gmail.com">Email us</a>
       </div>
     </div>
-    <div class="hero-photo">
-      <img src="images/hero.jpg" alt="WOFHRAD-SL women leaders and community members in Bombali District" width="1200" height="900" />
-      <div class="float-stat float-left"><div><b>90</b><small>Safe spaces for girls</small></div></div>
-      <div class="float-stat float-right"><div><b>41</b><small>Women elected, 2023</small></div></div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="stats" aria-label="Key results">
-  <div class="wrap stats-grid">
-    <div><b>2006</b><span>Year founded</span></div>
-    <div><b>2,250+</b><span>Girls in safe spaces</span></div>
-    <div><b>6</b><span>Districts reached</span></div>
-    <div><b>20 yrs</b><span>Of service</span></div>
-  </div>
-</section>
-
-<section class="section alt">
-  <div class="wrap grid-2">
-    <div class="photo-stack">
-      <img class="main" src="images/about-main.jpg" alt="WOFHRAD-SL team with community members" />
-      <img class="accent" src="images/about-accent.jpg" alt="Women's network meeting in Bombali" />
-    </div>
-    <div>
-      <span class="label">Who we are</span>
-      <h2>Promoting justice and inclusive governance</h2>
-      <p>WOFHRAD-SL is a non-governmental organisation founded in 2006 by a group of young women in Makeni — students of the University of Makeni inspired to be job creators, not job seekers. After the war ended in 2002, women in rural Sierra Leone still faced abuse and blocked access to justice in a male-dominated society.</p>
-      <p>We strive to ensure the promotion and protection of human rights and justice, democracy, and good governance — with women leading change in communities, districts and the nation.</p>
-      <div class="chips">
-        <div class="chip">Inclusivity & diversity</div>
-        <div class="chip">Consultation</div>
-        <div class="chip">Accountability</div>
-        <div class="chip">Integrity</div>
-        <div class="chip">Proactivity</div>
-        <div class="chip">Transparency</div>
+  <!-- ========== GET INVOLVED ========== -->
+  <section class="section" id="involved">
+    <div class="wrap" style="text-align:center;">
+      <span class="label">Take action</span>
+      <h2>Get involved</h2>
+      <div class="involve" style="text-align:left;margin-top:2rem;">
+        <div class="involve-card" style="background:var(--cream);">
+          <h3>Partner with us</h3>
+          <p>Collaborate on programmes and advocacy for women's rights in Sierra Leone.</p>
+          <a class="btn btn-outline-blue" href="#contact">Contact us</a>
+        </div>
+        <div class="involve-card" style="background:var(--cream);">
+          <h3>Donate</h3>
+          <p>Your gift funds safe spaces, leadership training and peacebuilding.</p>
+          <a class="btn btn-gold" href="#donate">Give</a>
+        </div>
+        <div class="involve-card" style="background:var(--cream);">
+          <h3>Intern / Volunteer</h3>
+          <p>Register interest for future placements and community support roles.</p>
+          <a class="btn btn-outline-blue" href="#contact">Register</a>
+        </div>
       </div>
-      <p style="margin-top:1.2rem;"><a class="btn btn-outline-blue" href="about.html">Read our story</a></p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="wrap">
-    <div style="text-align:center;margin-bottom:2rem;">
-      <span class="label">Programs</span>
-      <h2>Initiatives for change</h2>
+  <!-- ========== CONTACT ========== -->
+  <section class="section alt" id="contact">
+    <div class="wrap grid-2">
+      <div>
+        <span class="label">Get in touch</span>
+        <h2>Contact us</h2>
+        <p>Based in Makeni, working across Bombali, Karene, Kono, Pujehun and the Western Area.</p>
+        <p style="margin-top:1.2rem;"><strong>Address</strong><br>17 Frontier Road, Makeni, Sierra Leone</p>
+        <p><strong>Email</strong><br><a href="mailto:wofhrad95@gmail.com">wofhrad95@gmail.com</a></p>
+        <p><strong>Phone</strong><br>
+          <a href="tel:+23276335749">+232 76 335 749</a><br>
+          <a href="tel:+23277327815">+232 77 327 815</a>
+        </p>
+        <p><strong>WhatsApp</strong><br>
+          <a href="https://wa.me/23276335749" target="_blank" rel="noopener">Chat with us</a>
+        </p>
+      </div>
+      <div>
+        <h3 style="margin-top:0;">Send a message</h3>
+        <!-- Replace action with your Formspree / Netlify Forms endpoint -->
+        <form class="form-grid" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div>
+            <label for="name">Full name *</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div>
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div>
+            <label for="phone">Phone / WhatsApp</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+          <div>
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="general">General enquiry</option>
+              <option value="partnership">Partnership</option>
+              <option value="donation">Donation</option>
+              <option value="internship">Internship / Volunteer</option>
+              <option value="media">Media / Press</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <p style="font-size:.85rem;color:var(--muted);">By submitting you agree to our <a href="#privacy">Privacy Policy</a>.</p>
+        </form>
+      </div>
     </div>
-    <div class="cards three">
-      <a class="card" href="programs/icsp.html">
-        <img src="images/programs/icsp.jpg" alt="ICSP women's empowerment session" />
-        <div class="body"><span class="tag">Bombali District</span><h3>ICSP Women's Empowerment</h3><p>Irish Civil Society Programme work with women's networks on leadership, advocacy and holding duty-bearers to account.</p><span class="more">Learn more →</span></div>
-      </a>
-      <a class="card" href="programs/girls-circle.html">
-        <img src="images/programs/gcc.jpg" alt="Girls Circle Collective safe space" />
-        <div class="body"><span class="tag">Girls aged 9–18</span><h3>Girls Circle Collective</h3><p>90 safe spaces across 8 chiefdoms in Bombali for out-of-school girls — life skills, literacy, livelihoods and protection.</p><span class="more">Learn more →</span></div>
-      </a>
-      <a class="card" href="programs/people-to-people.html">
-        <img src="images/programs/p2p.jpg" alt="People to People peacebuilding" />
-        <div class="body"><span class="tag">Peacebuilding</span><h3>People to People Project</h3><p>Preventing politically motivated violence by training women and youth as peacebuilders using Trócaire's methodology.</p><span class="more">Learn more →</span></div>
-      </a>
-      <a class="card" href="programs/gender-equality.html">
-        <img src="images/programs/gender.jpg" alt="Gender equality and social accountability" />
-        <div class="body"><span class="tag">EU & Trócaire</span><h3>Gender Equality & Social Accountability</h3><p>Strengthening civil society so women can influence democratic governance and service delivery.</p><span class="more">Learn more →</span></div>
-      </a>
-      <a class="card" href="programs/peacebuilding.html">
-        <img src="images/programs/peace.jpg" alt="Conflict mitigation work" />
-        <div class="body"><span class="tag">Six districts</span><h3>Conflict Mitigation & Peace Building</h3><p>Peace ambassadors and dialogue across Bombali, Karene, Freetown, Waterloo, Kono and Pujehun.</p><span class="more">Learn more →</span></div>
-      </a>
-      <a class="card cta" href="internships.html">
-        <div class="body"><span class="tag">Opportunity</span><h3>Internship programme</h3><p>No posts are open right now. Register your interest and we will contact you when a placement is advertised.</p><span class="more">Register interest →</span></div>
-      </a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="section navy">
-  <div class="wrap impact-grid">
-    <div>
-      <span class="label gold">Impact</span>
-      <h2>Changing lives, changing policies</h2>
-      <p style="color:rgba(255,255,255,.8);">Two decades of advocacy — from rural safe spaces to the halls of parliament.</p>
-      <div class="quote">“After the 2018 elections, only 18 parliament members were female nationwide. In 2023, 41 female mandates were directly elected to parliament.”</div>
-      <p style="color:var(--gold);font-size:.85rem;margin-top:.8rem;">The Gender Equality and Women's Empowerment Act (GEWE Act, 2022) now mandates 30% female representation.</p>
+  <!-- ========== PRIVACY & TERMS (compact) ========== -->
+  <section class="section" id="privacy">
+    <div class="wrap" style="max-width:720px;">
+      <span class="label">Legal</span>
+      <h2>Privacy Policy & Terms</h2>
+      <p><em>Last updated: August 2026</em></p>
+      <h3>Privacy</h3>
+      <p>We collect only the information you voluntarily provide through contact or donation forms (name, email, phone, message). This data is used solely to respond to your enquiry or acknowledge a gift. We do not sell or share personal data with third parties for marketing. You may request deletion of your data by emailing wofhrad95@gmail.com.</p>
+      <h3 style="margin-top:1.5rem;">Terms of Service</h3>
+      <p>Content on this website is for information about WOFHRAD-SL’s work. Programme figures may be updated periodically. Donations are voluntary; always verify mobile-money or bank details with us before large transfers. Text and photos belonging to WOFHRAD-SL may not be used commercially without permission. We are not liable for external sites linked from these pages.</p>
+      <p style="margin-top:1rem;">Questions: <a href="mailto:wofhrad95@gmail.com">wofhrad95@gmail.com</a></p>
     </div>
-    <div class="stat-boxes">
-      <div class="stat-box"><b>41</b><span>Women in parliament (2023)</span></div>
-      <div class="stat-box"><b>30%</b><span>GEWE Act mandate</span></div>
-      <div class="stat-box"><b>90</b><span>Girls' safe spaces</span></div>
-      <div class="stat-box"><b>2,250+</b><span>Girls enrolled</span></div>
-      <div class="stat-box"><b>5,600</b><span>Reached with peace messages</span></div>
-      <div class="stat-box"><b>9</b><span>Young women governance networks</span></div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="section alt">
-  <div class="wrap">
-    <div style="text-align:center;margin-bottom:2rem;">
-      <span class="label">News</span>
-      <h2>Watch, read, listen</h2>
-    </div>
-    <div class="cards three">
-      <a class="card" href="news/womens-forum-for-human-rights-and-democracywofhrad-embarks-on-a-nationwide-leade.html">
-        <img src="images/news/training-2023.jpg" alt="Women candidates leadership training" />
-        <div class="body"><div class="meta">1 Jun 2023</div><h3>Nationwide leadership training for women candidates</h3><p>With UN Women, World Vision and the Government of Sierra Leone.</p></div>
-      </a>
-      <a class="card" href="news/cross-section-of-our-young-nd-energic-ladies-joined-the-rest-of-women-to-celebra.html">
-        <img src="images/news/iwd.jpg" alt="International Women's Day in Makeni" />
-        <div class="body"><div class="meta">13 Mar 2020</div><h3>International Women's Day in Makeni</h3><p>Celebrating with the Ministry of Social Welfare, Gender and Children's Affairs.</p></div>
-      </a>
-      <a class="card" href="news/food-supply-to-sponsorship-children.html">
-        <img src="images/news/ebola-food.jpg" alt="Food distribution during Ebola" />
-        <div class="body"><div class="meta">5 Feb 2015</div><h3>Food supply to 800 sponsored children</h3><p>Ebola response with ActionAid in Bombali District.</p></div>
-      </a>
-    </div>
-    <p style="text-align:center;margin-top:1.5rem;"><a class="btn btn-outline-blue" href="news.html">All news</a></p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div style="text-align:center;margin-bottom:1.5rem;">
-      <span class="label">Partners</span>
-      <h2>Who we work with</h2>
-    </div>
-    <div class="partners">
-      <div class="partner"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Irish_Aid_logo.jpg" alt="Irish Aid" loading="lazy" /><span>Irish Aid</span></div>
-      <div class="partner"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Trocaire_logo.png" alt="Trócaire" loading="lazy" /><span>Trócaire</span></div>
-      <div class="partner"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/UNWOMENLOGO.png" alt="UN Women" loading="lazy" /><span>UN Women</span></div>
-      <div class="partner"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/World_Vision_new_logo.png" alt="World Vision" loading="lazy" /><span>World Vision</span></div>
-      <div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="European Union" loading="lazy" /><span>European Union</span></div>
-      <div class="partner"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Actionaid_logo.png" alt="ActionAid" loading="lazy" /><span>ActionAid</span></div>
-      <div class="partner"><span>Purposeful</span></div>
-      <div class="partner"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Voluntary_Service_Overseas_(VSO)_logo.png" alt="VSO" loading="lazy" /><span>VSO</span></div>
-    </div>
-    <p style="text-align:center;margin-top:1.4rem;"><a class="btn btn-outline-blue" href="partners.html">All partners</a></p>
-  </div>
-</section>
-
-<section class="section navy">
-  <div class="wrap" style="text-align:center;">
-    <span class="label gold">Take action</span>
-    <h2>Get involved</h2>
-    <div class="involve" style="text-align:left;margin-top:2rem;">
-      <div class="involve-card"><h3>Partner with us</h3><p>Collaborate on programmes and advocacy for women's rights in Sierra Leone.</p><a class="btn btn-outline" href="contact.html">Contact us</a></div>
-      <div class="involve-card"><h3>Donate</h3><p>Your gift funds safe spaces, leadership training and peacebuilding in rural communities.</p><a class="btn btn-gold" href="donate.html">Give</a></div>
-      <div class="involve-card"><h3>Stay informed</h3><p>News, trainings and stories from Makeni and the districts we serve.</p><a class="btn btn-outline" href="get-involved.html">Newsletter</a></div>
-    </div>
-  </div>
-</section>
 </main>
 
 <footer>
   <div class="wrap footer-grid">
     <div>
-      <h3 style="font-size:1.1rem;letter-spacing:0;text-transform:none;font-family:Playfair Display,serif;">WOFHRAD-SL</h3>
-      <p>Women's Forum for Human Rights and Democracy — Sierra Leone. Founded in 2006 in Makeni to promote women's rights, girl-child education, and inclusive governance.</p>
+      <h3 style="font-size:1.1rem;letter-spacing:0;text-transform:none;font-family:'Playfair Display',serif;">WOFHRAD-SL</h3>
+      <p>Women's Forum for Human Rights and Democracy — Sierra Leone. Founded in 2006 in Makeni.</p>
       <p>17 Frontier Road, Makeni, Sierra Leone</p>
     </div>
     <div>
       <h3>Who we are</h3>
-      <a href="about.html">Our story</a>
-      <a href="team.html">Team</a>
-      <a href="partners.html">Partners</a>
-      <a href="privacy.html">Privacy</a>
+      <a href="#about">Our story</a>
+      <a href="#partners">Partners</a>
+      <a href="#privacy">Privacy & Terms</a>
     </div>
     <div>
       <h3>Work</h3>
-      <a href="programs.html">Programs</a>
-      <a href="news.html">News</a>
-      <a href="internships.html">Internships</a>
-      <a href="donate.html">Donate</a>
+      <a href="#programs">Programs</a>
+      <a href="#news">News</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reports">Reports</a>
+      <a href="#events">Events</a>
+      <a href="#donate">Donate</a>
     </div>
     <div>
       <h3>Contact</h3>
       <a href="mailto:wofhrad95@gmail.com">wofhrad95@gmail.com</a>
       <a href="tel:+23276335749">+232 76 335 749</a>
       <a href="tel:+23277327815">+232 77 327 815</a>
-      <a href="https://wa.me/23276335749">WhatsApp</a>
+      <a href="https://wa.me/23276335749" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
   <div class="wrap footer-bottom">
     <p>© 2026 WOFHRAD-SL. All rights reserved. Registered NGO, Sierra Leone. Ministry of Social Welfare, Gender and Children's Affairs.</p>
   </div>
 </footer>
+
 <button id="back-top" aria-label="Back to top">↑</button>
 <a id="wa" href="https://wa.me/23276335749" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WA</a>
-<script src="js/main.js"></script>
-</body></html>
+
+<script>
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Smooth scroll + active nav
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const id = this.getAttribute('href');
+      if (id.length > 1) {
+        e.preventDefault();
+        const el = document.querySelector(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Back to top
+  const backTop = document.getElementById('back-top');
+  window.addEventListener('scroll', () => {
+    backTop.classList.toggle('show', window.scrollY > 400);
+  });
+  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Simple language toggle stub (extend with real translations later)
+  document.querySelectorAll('.lang-toggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('on'));
+      document.querySelectorAll(`.lang-toggle button[data-lang="${btn.dataset.lang}"]`).forEach(b => b.classList.add('on'));
+    });
+  });
+</script>
+</body>
+</html>
